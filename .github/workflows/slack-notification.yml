@@ -39,7 +39,7 @@ jobs:
               "attachments": [
                 {
                   "color": "good",
-                  "text": "A pull request has been merged: <${{ github.event.pull_request.html_url }}|${{ github.event.pull_request.title }}> by ${{ github.event.pull_request.user.login }}"
+                  "text": "A pull request has been merged: <${{ github.event.pull_request.html_url }}|${{ github.event.pull_request.title }}> by ${{ github.event.pull_request.merged_by.login }}"
                 }
               ]
             }
