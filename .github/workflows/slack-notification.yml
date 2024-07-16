@@ -20,8 +20,8 @@ jobs:
               "attachments": [
                 {
                   "color": "good",
-                  "title": "New Pull Request Opened",
-                  "text": "A new pull request has been opened by ${{ github.event.pull_request.user.login }}.\nTitle: <${{ github.event.pull_request.html_url }}|${{ github.event.pull_request.title }}>\nDescription: ${{ github.event.pull_request.body }}"
+                  "title": "<${{ github.event.pull_request.html_url }}|${{ github.event.pull_request.title }}> by ${{ github.event.pull_request.user.login }}",
+                  "text": "${{ github.event.pull_request.body }}"
                 }
               ]
             }
@@ -39,8 +39,7 @@ jobs:
               "attachments": [
                 {
                   "color": "good",
-                  "title": "Pull Request Merged",
-                  "text": "A pull request has been merged by ${{ github.event.pull_request.merged_by.login }}.\nTitle: <${{ github.event.pull_request.html_url }}|${{ github.event.pull_request.title }}>\nDescription: ${{ github.event.pull_request.body }}"
+                  "text": "A pull request has been merged: <${{ github.event.pull_request.html_url }}|${{ github.event.pull_request.title }}> by ${{ github.event.pull_request.user.login }}"
                 }
               ]
             }
