@@ -40,7 +40,7 @@ jobs:
                 {
                   "color": "good",
                   "title": "Pull Request Merged",
-                  "text": "A pull request has been merged by ${{ github.event.pull_request.merged_by.login }}.\nTitle: <${{ github.event.pull_request.html_url }}|${{ github.event.pull_request.title }}>\nDescription: ${{ github.event.pull_request.body }}",
+                  "text": "A pull request has been merged by ${{ github.event.pull_request.merged_by.login }}.\nTitle: <${{ github.event.pull_request.html_url }}|${{ github.event.pull_request.title }}>\nDescription: ${{ github.event.pull_request.body }}"
                 }
               ]
             }
