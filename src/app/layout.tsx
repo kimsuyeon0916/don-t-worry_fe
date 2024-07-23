@@ -1,4 +1,5 @@
 import type { PropsWithChildren } from 'react'
+import { DevTools } from 'jotai-devtools'
 
 import QueryProvider from '@/hooks/QueryProvider'
 
@@ -9,6 +10,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
     <html lang="en">
       <head />
       <body>
+        <DevTools />
         <QueryProvider>{children}</QueryProvider>
       </body>
     </html>
