@@ -1,18 +1,12 @@
 {
   "parser": "@typescript-eslint/parser",
-	"parserOptions": {
-    "project": "./tsconfig.json"
-  },
   "plugins": ["@typescript-eslint", "unused-imports", "simple-import-sort"],
   "extends": [
     "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:prettier/recommended",
-    "plugin:storybook/recommended",
-		"airbnb",
-		"airbnb/hooks",
-		"airbnb-typescript"
+    "plugin:storybook/recommended"
   ],
   "rules": {
     "unused-imports/no-unused-imports": "error",
