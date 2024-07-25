@@ -9,13 +9,6 @@ jobs:
     name: Send Slack Notification
     runs-on: ubuntu-latest
     steps:
-      - name: Prepare PR Body for JSON
-        id: prepare-body
-        run: |
-          PR_BODY="${{ github.event.pull_request.body }}"
-          ESCAPED_PR_BODY=$(echo "$PR_BODY" | sed -e 's/"/\\"/g' -e 's/\n/\\n/g')
-          echo "ESCAPED_PR_BODY=$ESCAPED_PR_BODY" >> $GITHUB_ENV
-
       - name: Send Slack Notification for PR creation
         if: github.event.action == 'opened' || github.event.action == 'reopened'
         uses: 8398a7/action-slack@v3
@@ -28,7 +21,7 @@ jobs:
                 {
                   "color": "good",
                   "title": "<${{ github.event.pull_request.html_url }}|${{ github.event.pull_request.title }}> by ${{ github.event.pull_request.user.login }}",
-                  "text": "${{ env.ESCAPED_PR_BODY }}"
+                  "text": "${{ github.event.pull_request.body }}"
                 }
               ]
             }
