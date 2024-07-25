@@ -9,11 +9,13 @@ jobs:
     name: Send Slack Notification
     runs-on: ubuntu-latest
     steps:
-      - name: Sanitize PR body
-        id: sanitize-body
+      - name: Escape PR body for JSON
+        id: escape-json
         run: |
+          PR_BODY="${{ github.event.pull_request.body }}"
           # Escape special characters for JSON
-          echo "PR_BODY=$(echo '${{ github.event.pull_request.body }}' | sed 's/"/\\"/g; s/$/\\n/')" >> $GITHUB_ENV
+          ESCAPED_PR_BODY=$(echo "$PR_BODY" | sed -e 's/"/\\"/g' -e 's/\n/\\n/g')
+          echo "ESCAPED_PR_BODY=$ESCAPED_PR_BODY" >> $GITHUB_ENV
 
       - name: Send Slack Notification for PR creation
         if: github.event.action == 'opened' || github.event.action == 'reopened'
@@ -27,7 +29,7 @@ jobs:
                 {
                   "color": "good",
                   "title": "<${{ github.event.pull_request.html_url }}|${{ github.event.pull_request.title }}> by ${{ github.event.pull_request.user.login }}",
-                  "text": "${{ env.PR_BODY }}"
+                  "text": "${{ env.ESCAPED_PR_BODY }}"
                 }
               ]
             }
