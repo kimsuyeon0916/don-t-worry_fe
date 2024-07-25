@@ -17,49 +17,33 @@ export class HttpClient {
     this.client.interceptors.response.use(this.onResponse, this.onError)
   }
 
-  get<T>(url: string, params?: unknown, config?: AxiosRequestConfig): Promise<T> {
-    return this.client({
-      url,
-      params,
-      method: 'GET',
-      ...config,
-    })
+  get<T>(...args: Parameters<typeof this.client.get>) {
+    return this.client.get<T>(...args)
   }
 
-  put<T>(url: string, data?: unknown, config?: AxiosRequestConfig): Promise<T> {
-    return this.client({
-      url,
-      data,
-      method: 'PUT',
-      ...config,
-    })
+  post<T>(...args: Parameters<typeof this.client.post>) {
+    return this.client.post<T>(...args)
   }
 
-  post<T>(url: string, data?: unknown, config?: AxiosRequestConfig): Promise<T> {
-    return this.client({
-      url,
-      data,
-      method: 'POST',
-      ...config,
-    })
+  put<T>(...args: Parameters<typeof this.client.put>) {
+    return this.client.put<T>(...args)
   }
 
-  delete<T>(url: string, params?: unknown, config?: AxiosRequestConfig): Promise<T> {
-    return this.client({
-      url,
-      params,
-      method: 'DELETE',
-      ...config,
-    })
+  patch<T>(...args: Parameters<typeof this.client.patch>) {
+    return this.client.patch<T>(...args)
   }
 
-  private onResponse(response: AxiosResponse) {
-    return response.data
+  delete<T>(...args: Parameters<typeof this.client.delete>) {
+    return this.client.delete<T>(...args)
   }
 
   private onRequest(config: InternalAxiosRequestConfig) {
     // 토큰 처리 방식에 따라 헤더 추가 설정
     return config
+  }
+
+  private onResponse(response: AxiosResponse) {
+    return response.data
   }
 
   private onError(error: AxiosError) {
