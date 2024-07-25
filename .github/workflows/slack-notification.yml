@@ -9,11 +9,10 @@ jobs:
     name: Send Slack Notification
     runs-on: ubuntu-latest
     steps:
-      - name: Escape PR body for JSON
-        id: escape-json
+      - name: Prepare PR body for JSON
+        id: prepare-body
         run: |
           PR_BODY="${{ github.event.pull_request.body }}"
-          # Escape special characters for JSON
           ESCAPED_PR_BODY=$(echo "$PR_BODY" | sed -e 's/"/\\"/g' -e 's/\n/\\n/g')
           echo "ESCAPED_PR_BODY=$ESCAPED_PR_BODY" >> $GITHUB_ENV
 
