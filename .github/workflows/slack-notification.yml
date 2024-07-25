@@ -9,23 +9,12 @@ jobs:
     name: Send Slack Notification
     runs-on: ubuntu-latest
     steps:
-      - name: Generate Slack Payload for PR creation
-        id: generate-payload
+      - name: Prepare PR Body for JSON
+        id: prepare-body
         run: |
           PR_BODY="${{ github.event.pull_request.body }}"
           ESCAPED_PR_BODY=$(echo "$PR_BODY" | sed -e 's/"/\\"/g' -e 's/\n/\\n/g')
-          echo "custom_payload=$(cat <<EOF
-            {
-              "attachments": [
-                {
-                  "color": "good",
-                  "title": "<${{ github.event.pull_request.html_url }}|${{ github.event.pull_request.title }}> by ${{ github.event.pull_request.user.login }}",
-                  "text": "$ESCAPED_PR_BODY"
-                }
-              ]
-            }
-          EOF
-          )" >> $GITHUB_ENV
+          echo "ESCAPED_PR_BODY=$ESCAPED_PR_BODY" >> $GITHUB_ENV
 
       - name: Send Slack Notification for PR creation
         if: github.event.action == 'opened' || github.event.action == 'reopened'
@@ -33,7 +22,16 @@ jobs:
         with:
           status: custom
           fields: pullRequest
-          custom_payload: ${{ env.custom_payload }}
+          custom_payload: |
+            {
+              "attachments": [
+                {
+                  "color": "good",
+                  "title": "<${{ github.event.pull_request.html_url }}|${{ github.event.pull_request.title }}> by ${{ github.event.pull_request.user.login }}",
+                  "text": "${{ env.ESCAPED_PR_BODY }}"
+                }
+              ]
+            }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 
