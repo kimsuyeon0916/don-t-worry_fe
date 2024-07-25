@@ -21,7 +21,6 @@ jobs:
                 {
                   "color": "good",
                   "title": "<${{ github.event.pull_request.html_url }}|${{ github.event.pull_request.title }}> by ${{ github.event.pull_request.user.login }}",
-                  "text": "${{ github.event.pull_request.body }}"
                 }
               ]
             }
