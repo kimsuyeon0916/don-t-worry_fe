@@ -10,18 +10,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Send Slack Notification for PR creation
-        if: github.event_name == 'pull_request' && github.event.action == 'opened'
+        if: github.event.action == 'opened'
         uses: 8398a7/action-slack@v3
         with:
           status: custom
-          fields: author,pullRequest
+          fields: pullRequest
           custom_payload: |
             {
               "attachments": [
                 {
                   "color": "good",
                   "title": "<${{ github.event.pull_request.html_url }}|${{ github.event.pull_request.title }}> by ${{ github.event.pull_request.user.login }}",
-                  "text": "${{ github.event.pull_request.body }}"
+                  "text": `${{ github.event.pull_request.body }}`
                 }
               ]
             }
@@ -29,7 +29,7 @@ jobs:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 
       - name: Send Slack Notification for PR merge
-        if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true
+        if: github.event.action == 'closed' && github.event.pull_request.merged == true
         uses: 8398a7/action-slack@v3
         with:
           status: custom

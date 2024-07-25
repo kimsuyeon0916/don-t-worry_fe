@@ -3,6 +3,7 @@
 import { type PropsWithChildren, useState } from 'react'
 import { QueryClient, type QueryClientConfig, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import { DevTools } from 'jotai-devtools'
 
 const queryClientOption: QueryClientConfig = {
   defaultOptions: {
@@ -20,6 +21,7 @@ const QueryProvider = ({ children }: PropsWithChildren) => {
     <QueryClientProvider client={queryClient}>
       {children}
       <ReactQueryDevtools />
+      <DevTools />
     </QueryClientProvider>
   )
 }
