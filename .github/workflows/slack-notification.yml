@@ -9,6 +9,12 @@ jobs:
     name: Send Slack Notification
     runs-on: ubuntu-latest
     steps:
+      - name: Sanitize PR body
+        id: sanitize-body
+        run: |
+          # Escape special characters for JSON
+          echo "PR_BODY=$(echo '${{ github.event.pull_request.body }}' | sed 's/"/\\"/g; s/$/\\n/')" >> $GITHUB_ENV
+
       - name: Send Slack Notification for PR creation
         if: github.event.action == 'opened' || github.event.action == 'reopened'
         uses: 8398a7/action-slack@v3
@@ -21,6 +27,7 @@ jobs:
                 {
                   "color": "good",
                   "title": "<${{ github.event.pull_request.html_url }}|${{ github.event.pull_request.title }}> by ${{ github.event.pull_request.user.login }}",
+                  "text": "${{ env.PR_BODY }}"
                 }
               ]
             }
