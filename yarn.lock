@@ -9207,6 +9207,7 @@ __metadata:
     storybook: "npm:^8.2.6"
     tailwindcss: "npm:^3.4.1"
     typescript: "npm:^5"
+    webpack: "npm:^5.93.0"
   languageName: unknown
   linkType: soft
 
@@ -12738,7 +12739,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack@npm:5":
+"webpack@npm:5, webpack@npm:^5.93.0":
   version: 5.93.0
   resolution: "webpack@npm:5.93.0"
   dependencies:
