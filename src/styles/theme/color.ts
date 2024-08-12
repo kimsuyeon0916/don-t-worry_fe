@@ -17,7 +17,8 @@ export const color = {
   button: {
     default: '#1E6AFF',
     disable: '#A1B0CC',
-    press: '#374162',
+    text: '#374162',
+    press: '#1551C5',
   },
 
   piechart: {
