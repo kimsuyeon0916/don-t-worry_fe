@@ -14,7 +14,7 @@ const queryClientOption: QueryClientConfig = {
   },
 }
 
-const QueryProvider = ({ children }: PropsWithChildren) => {
+export const QueryProvider = ({ children }: PropsWithChildren) => {
   const [queryClient] = useState(() => new QueryClient(queryClientOption))
 
   return (
@@ -25,5 +25,3 @@ const QueryProvider = ({ children }: PropsWithChildren) => {
     </QueryClientProvider>
   )
 }
-
-export default QueryProvider
