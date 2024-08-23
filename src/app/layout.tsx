@@ -12,7 +12,9 @@ export default function RootLayout({ children }: PropsWithChildren) {
       <head />
       <body>
         <QueryProvider>
-          <LazyMotionProvider>{children}</LazyMotionProvider>
+          <LazyMotionProvider>
+            <div className="layout">{children}</div>
+          </LazyMotionProvider>
         </QueryProvider>
       </body>
     </html>
