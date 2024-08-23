@@ -50,7 +50,7 @@ export const BottomSheet = ({
         exit="exit"
       >
         <m.div
-          className={`flex-column-align ${heightStyle[variant]} absolute left-0 top-full ${zIndex.backdrop} w-full rounded-t-2xl bg-white px-[16px] pt-[12px]`}
+          className={`flex-column-align ${heightStyle[variant]} absolute left-0 top-full ${zIndex.backdrop} w-full rounded-t-2xl bg-white px-[16px] pb-[16px] pt-[12px]`}
           variants={bottomSheetVariants}
         >
           {children}

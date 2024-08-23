@@ -1,6 +1,6 @@
 import type { Config } from 'tailwindcss'
 
-import { borderRadius, boxShadow, color, fontSize, fontWeight, opacity } from './src/styles/theme'
+import { borderRadius, boxShadow, color, fontSize, fontWeight } from './src/styles/theme'
 
 const config: Config = {
   content: [
@@ -16,7 +16,6 @@ const config: Config = {
       color,
       fontSize,
       fontWeight,
-      opacity,
       fontFamily: {
         nanumBarunGothic: ['--font--nanumBarunGothic'],
       },
