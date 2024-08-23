@@ -1,6 +1,6 @@
 import type { PropsWithChildren } from 'react'
 
-import QueryProvider from '@/hooks/QueryProvider'
+import { LazyMotionProvider, QueryProvider } from '@/hooks'
 
 import { nanumBarunGothic } from './fonts'
 
@@ -11,7 +11,9 @@ export default function RootLayout({ children }: PropsWithChildren) {
     <html lang="kr" className={nanumBarunGothic.variable}>
       <head />
       <body>
-        <QueryProvider>{children}</QueryProvider>
+        <QueryProvider>
+          <LazyMotionProvider>{children}</LazyMotionProvider>
+        </QueryProvider>
       </body>
     </html>
   )
