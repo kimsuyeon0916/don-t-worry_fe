@@ -1,6 +1,6 @@
 import type { Config } from 'tailwindcss'
 
-import { borderRadius, boxShadow, color, fontSize, fontWeight } from './src/styles/theme'
+import { borderRadius, boxShadow, colors, fontSize, fontWeight } from './src/styles/theme'
 
 const config: Config = {
   content: [
@@ -13,7 +13,7 @@ const config: Config = {
     extend: {
       borderRadius,
       boxShadow,
-      color,
+      colors,
       fontSize,
       fontWeight,
       fontFamily: {
