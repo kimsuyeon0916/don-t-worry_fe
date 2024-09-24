@@ -15,5 +15,6 @@ export const nanumBarunGothic = localFont({
       weight: '300',
     },
   ],
+  display: 'swap',
   variable: '--font-nanumBarunGothic',
 })

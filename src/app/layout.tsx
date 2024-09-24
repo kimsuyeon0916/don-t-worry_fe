@@ -8,7 +8,7 @@ import './globals.css'
 
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
-    <html lang="kr" className={nanumBarunGothic.variable}>
+    <html lang="kr" className={`${nanumBarunGothic.variable} font-nanumBarunGothic`}>
       <head />
       <body>
         <QueryProvider>
