@@ -1,0 +1,62 @@
+.h1_bold {
+  @apply text-xl font-bold leading-[120%];
+}
+.h2_bold {
+  @apply text-lg font-bold leading-[120%];
+}
+.h3_bold {
+  @apply text-md font-bold leading-[120%];
+}
+.h4_bold {
+  @apply text-sm font-bold leading-[120%];
+}
+
+.s1_reg {
+  @apply text-md font-regular leading-[120%];
+}
+
+.body1_bold {
+  @apply text-lg font-bold leading-[120%];
+}
+.body2_bold {
+  @apply text-md font-bold leading-[120%];
+}
+.body2_reg {
+  @apply text-md font-regular leading-[120%];
+}
+.body3_bold {
+  @apply text-sm font-bold leading-[120%];
+}
+.body3_reg {
+  @apply text-sm font-regular leading-[120%];
+}
+.body4_reg {
+  @apply text-xs font-regular leading-[120%];
+}
+.body4_light {
+  @apply text-xs font-light leading-[120%];
+}
+.body5_reg {
+  @apply text-2xs font-regular leading-[120%];
+}
+.body6_light {
+  @apply text-4xs font-light leading-[120%];
+}
+
+.btn_bold {
+  @apply text-md font-bold leading-[120%];
+}
+.btn_reg {
+  @apply text-sm font-regular leading-[120%];
+}
+.btn_reg_under {
+  @apply text-sm font-regular leading-[120%] underline;
+}
+
+.navi_bold {
+  @apply text-3xs font-bold leading-[120%];
+}
+
+.info_reg {
+  @apply text-2xs font-regular leading-[120%];
+}

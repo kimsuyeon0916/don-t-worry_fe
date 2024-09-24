@@ -1,4 +1,4 @@
-export const color = {
+export const colors = {
   white: '#FFFFFF',
   black: '#333333',
 
@@ -15,7 +15,6 @@ export const color = {
   primary: '#1E6AFF',
 
   button: {
-    default: '#1E6AFF',
     disable: '#A1B0CC',
     text: '#374162',
     press: '#1551C5',
