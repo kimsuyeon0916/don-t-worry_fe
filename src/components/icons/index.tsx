@@ -4,7 +4,9 @@ import { BellIcon } from './Bell'
 import { CheckBoxNoIcon, CheckBoxYesIcon, CheckIcon } from './Check'
 import { DeleteIcon, TextDeleteIcon } from './Delete'
 import { EditIcon } from './Edit'
+import { EllipseIcon } from './Ellipse'
 import { GoIcon } from './Go'
+import { InfoIcon } from './Info'
 import { HomeIcon, PortfolioIcon, ProfitIcon, SettingIcon } from './Navigation'
 import { PlusIcon } from './Plus'
 
@@ -32,6 +34,8 @@ export const iconMap = {
   portfolio: PortfolioIcon,
   profit: ProfitIcon,
   setting: SettingIcon,
+  ellipse: EllipseIcon,
+  info: InfoIcon,
 }
 
 export interface IconComponentProps extends IconProps {

@@ -1,5 +1,5 @@
 export { borderRadius } from './borderRadius'
 export { boxShadow } from './boxShadow'
-export { color } from './color'
+export { colors } from './colors'
 export { fontSize } from './fontSize'
 export { fontWeight } from './fontWeight'
