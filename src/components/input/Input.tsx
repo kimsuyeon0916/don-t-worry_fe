@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import { useFormContext } from 'react-hook-form'
 
 import { Icon } from '../icons'
@@ -15,11 +16,19 @@ interface InputProps {
 export const Text = ({ name, placeholder, maxLength }: InputProps) => {
   const { register, setValue, watch } = useFormContext()
 
+  const [inputValue, setInputValue] = useState<string>('')
+
+  useEffect(() => {
+    const subscription = watch((value) => {
+      setInputValue(value[name])
+    })
+
+    return () => subscription.unsubscribe()
+  }, [watch])
+
   const handleClearInput = () => {
     setValue(name, '')
   }
-
-  const inputValue: string = watch(name)
 
   return (
     <div className="relative w-full">
@@ -45,8 +54,16 @@ export const Text = ({ name, placeholder, maxLength }: InputProps) => {
 export const Select = ({ name, placeholder, onClick }: InputProps) => {
   const { register, watch } = useFormContext()
 
-  const inputValue: string = watch(name)
+  const [inputValue, setInputValue] = useState<string>('')
   const inputStyle = inputValue?.length > 0 && 'border-primary'
+
+  useEffect(() => {
+    const subscription = watch((value) => {
+      setInputValue(value[name])
+    })
+
+    return () => subscription.unsubscribe()
+  }, [watch])
 
   return (
     <div className="relative w-full">
@@ -75,12 +92,20 @@ interface InputWithTitleProps extends InputProps {
 export const TextWithTitle = ({ title, name, placeholder }: InputWithTitleProps) => {
   const { register, setValue, watch } = useFormContext()
 
+  const [inputValue, setInputValue] = useState<string>('')
+  const inputStyle = inputValue?.length > 0 ? 'pr-[32px] pl-[16px]' : 'px-[16px]'
+
+  useEffect(() => {
+    const subscription = watch((value) => {
+      setInputValue(value[name])
+    })
+
+    return () => subscription.unsubscribe()
+  }, [watch])
+
   const handleClearInput = () => {
     setValue(name, '')
   }
-
-  const inputValue: string = watch(name)
-  const inputStyle = inputValue?.length > 0 ? 'pr-[32px] pl-[16px]' : 'px-[16px]'
 
   return (
     <div className="relative w-full">
