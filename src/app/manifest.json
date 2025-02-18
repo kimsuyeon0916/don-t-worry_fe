@@ -1,0 +1,32 @@
+{
+  "theme_color": "#1E6AFF",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "name": "돈워리",
+  "description": "파생상품들을 이용한 고객들의 포트폴리오 헷지 및 시세차익 서비스 (portfolio hedging and capital gains services for customers using derivatives)",
+  "short_name": "돈워리",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
