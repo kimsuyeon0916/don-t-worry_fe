@@ -5,6 +5,7 @@ import { FormProvider } from 'react-hook-form'
 import { useRouter } from 'next/navigation'
 import { useAtomValue } from 'jotai'
 
+import { handleAllowNotification } from '@/apis'
 import { hedgeTypeMap } from '@/constants'
 import { HookformDevTools } from '@/HookformDevtools'
 import { useSignUp, useSignupForm } from '@/hooks'
@@ -31,7 +32,7 @@ export const SignUpFormProvider = ({ children }: PropsWithChildren) => {
   })
 
   const signUpHandler: SubmitHandler<SignUpForm> = async (formData) => {
-    const token = 'token' // FCM 토큰 받아오기
+    const token = (await handleAllowNotification()) as string // FCM 토큰 받아오기
 
     const signUpData = {
       ...formData,

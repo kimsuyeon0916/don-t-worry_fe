@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useSetAtom } from 'jotai'
 
+import { handleAllowNotification } from '@/apis'
 import KaKaoLogin from '@/assets/kakao_login.png'
 import Logo from '@/assets/logo.png'
 import { useCheckExistUser } from '@/hooks'
@@ -44,7 +45,13 @@ export const SignInStep = () => {
     const username = getUsername()
     const deviceId = readDeviceId()
 
-    // 알림 기능과 연동 후 checkExistUser 호출
+    handleAllowNotification().then(
+      (token) =>
+        username &&
+        token &&
+        deviceId &&
+        checkExistUser({ username: username, token: token, deviceId: deviceId }),
+    )
   }, [checkExistUser, readDeviceId])
 
   return (
