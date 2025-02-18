@@ -1,5 +1,6 @@
 import type { PropsWithChildren } from 'react'
 
+import '@/app/settingFcm'
 import { LazyMotionProvider, QueryProvider } from '@/hooks'
 
 import { nanumBarunGothic } from './fonts'
