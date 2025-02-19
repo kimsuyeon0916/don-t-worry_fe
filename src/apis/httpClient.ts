@@ -65,7 +65,6 @@ export class HttpClient {
     // 토큰 재발급
     if (error.config && response?.status === 400) {
       return issueToken().then(async (res) => {
-        console.log
         if (res?.status === 200 && res.headers['authorization']) {
           this.onRequest(res.config)
         }
