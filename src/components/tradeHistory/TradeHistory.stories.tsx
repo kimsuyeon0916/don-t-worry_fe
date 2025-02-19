@@ -19,7 +19,7 @@ const tradeHistoryData = [
     optionType: 'PUT',
     tradePrice: 400.06,
     commission: 0.06,
-    settlementAmout: 400,
+    settlementAmount: 400,
     time: new Date('2024-08-07T01:00:00'),
   },
   {
@@ -27,7 +27,7 @@ const tradeHistoryData = [
     optionType: 'CALL',
     tradePrice: 400.06,
     commission: 0.06,
-    settlementAmout: 400,
+    settlementAmount: 400,
     time: new Date('2024-08-07T00:00:00'),
   },
   {
@@ -35,7 +35,7 @@ const tradeHistoryData = [
     optionType: 'CALL',
     tradePrice: 400.06,
     commission: 0.06,
-    settlementAmout: 400,
+    settlementAmount: 400,
     time: new Date('2024-08-07T00:00:00'),
   },
   {
@@ -43,7 +43,7 @@ const tradeHistoryData = [
     optionType: 'CALL',
     tradePrice: 400.06,
     commission: 0.06,
-    settlementAmout: 400,
+    settlementAmount: 400,
     time: new Date('2024-08-07T00:00:00'),
   },
   {
@@ -51,7 +51,7 @@ const tradeHistoryData = [
     optionType: 'PUT',
     tradePrice: 400.06,
     commission: 0.06,
-    settlementAmout: 400,
+    settlementAmount: 400,
     time: new Date('2024-08-07T00:00:00'),
   },
   {
@@ -59,7 +59,7 @@ const tradeHistoryData = [
     optionType: 'CALL',
     tradePrice: 400.06,
     commission: 0.06,
-    settlementAmout: 400,
+    settlementAmount: 400,
     time: new Date('2024-08-07T00:00:00'),
   },
 ]

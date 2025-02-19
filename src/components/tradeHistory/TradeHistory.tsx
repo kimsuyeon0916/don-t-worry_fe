@@ -40,7 +40,7 @@ const columns = [
     ),
     size: 62,
   }),
-  columnHelper.accessor('settlementAmout', {
+  columnHelper.accessor('settlementAmount', {
     header: '정산금',
     cell: (props) => (
       <p className="text-center">
