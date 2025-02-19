@@ -13,4 +13,7 @@ const prod = process.env.NODE_ENV === 'production'
 export default withPWA({
   dest: 'public',
   disable: prod ? false : true,
+  workbox: {
+    maximumFileSizeToCacheInBytes: 5000000, // 5MB로 증가 (기본값: 2MB)
+  },
 })(nextConfig)
