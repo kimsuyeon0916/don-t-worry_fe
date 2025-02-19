@@ -11,8 +11,8 @@ export interface BottomSheetType {
 export interface TradeHistoryType {
   derivativeName: string
   optionType: 'CALL' | 'PUT' | string // 수정 필요
-  tradePrice: string
-  commission: string
-  settlementAmout: string
+  tradePrice: number
+  commission: number
+  settlementAmount: number
   time: Date
 }
