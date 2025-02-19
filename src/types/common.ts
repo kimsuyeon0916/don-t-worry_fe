@@ -11,8 +11,27 @@ export interface BottomSheetType {
 export interface TradeHistoryType {
   derivativeName: string
   optionType: 'CALL' | 'PUT' | string // 수정 필요
-  tradePrice: string
-  commission: string
-  settlementAmout: string
-  time: Date
+  tradePrice: number
+  commission: number
+  settlementAmount: number
+  time: string
 }
+
+export interface PageInfo {
+  currentPage: number
+  size: number
+  hasNextPage: boolean
+  totalContents: number
+  totalPages: number
+}
+
+export interface PageParam {
+  page: number
+}
+
+export interface ServiceTradeHistoryResponse {
+  content: TradeHistoryType[]
+  pageInfo: PageInfo
+}
+
+export interface UserTradeHistoryResponse extends ServiceTradeHistoryResponse {}

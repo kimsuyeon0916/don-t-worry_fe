@@ -7,8 +7,6 @@ import axios, {
   isAxiosError,
 } from 'axios'
 
-import { issueToken } from '.'
-
 const ACCESS_TOKEN = process.env.NEXT_PUBLIC_ACCESS_TOKEN as string
 
 export class HttpClient {
@@ -63,13 +61,13 @@ export class HttpClient {
     }
 
     // 토큰 재발급
-    if (error.config && response?.status === 400) {
-      return issueToken().then(async (res) => {
-        if (res?.status === 200 && res.headers['authorization']) {
-          this.onRequest(res.config)
-        }
-      })
-    }
+    // if (error.config && response?.status === 400) {
+    //   return issueToken().then(async (res) => {
+    //     if (res.status === 200 && res.headers['authorization']) {
+    //       this.onRequest(res.config)
+    //     }
+    //   })
+    // }
 
     return Promise.reject(error)
   }
