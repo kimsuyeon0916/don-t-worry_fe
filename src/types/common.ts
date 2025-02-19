@@ -14,5 +14,24 @@ export interface TradeHistoryType {
   tradePrice: number
   commission: number
   settlementAmount: number
-  time: Date
+  time: string
 }
+
+export interface PageInfo {
+  currentPage: number
+  size: number
+  hasNextPage: boolean
+  totalContents: number
+  totalPages: number
+}
+
+export interface PageParam {
+  page: number
+}
+
+export interface ServiceTradeHistoryResponse {
+  content: TradeHistoryType[]
+  pageInfo: PageInfo
+}
+
+export interface UserTradeHistoryResponse extends ServiceTradeHistoryResponse {}
